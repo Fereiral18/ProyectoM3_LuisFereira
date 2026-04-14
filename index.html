@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="styles.css">
+    <title>ChatBot App - Asistente Virtual</title>
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <h1>✨ Asistente IA</h1>
+        <nav class="nav-links">
+            <button data-route="home" class="nav-btn active">🏠 Inicio</button>
+            <button data-route="chat" class="nav-btn">💬 Chat</button>
+            <button data-route="about" class="nav-btn">ℹ️ About</button>
+        </nav>
+    </header>
+
+    <main class="view-container">
+        <!-- HOME VIEW -->
+        <div id="home-view" class="view">
+            <div class="home-content">
+                <div class="welcome-icon">🤖✨</div>
+                <h2>Bienvenido a ChatBot</h2>
+                <div class="home-card">
+                    <p>Tu asistente virtual inteligente, disponible 24/7 para resolver dudas, conversar y ayudarte.</p>
+                    <button id="go-to-chat-btn" class="cta-button">Iniciar conversación →</button>
+                </div>
+                <p style="font-size: 0.9rem; color: #6b7280;">SPA con History API | Back/Forward funcional</p>
+            </div>
+        </div>
+
+        <!-- CHAT VIEW -->
+        <div id="chat-view" class="view">
+            <div class="chat-container">
+                <div class="messages-area" id="messages-container">
+                    <!-- Los mensajes se inyectan dinámicamente -->
+                    <div class="message bot-message">
+                        <div class="bubble">
+                            👋 ¡Hola! Soy tu asistente. ¿En qué puedo ayudarte hoy?
+                            <span class="timestamp" id="welcome-time"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+                    <button id="send-btn">Enviar ➤</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT VIEW -->
+        <div id="about-view" class="view">
+            <div class="about-content">
+                <div class="about-card">
+                    <h2>📱 Sobre la App</h2>
+                    <p><strong>ChatBot SPA</strong> - Una aplicación moderna de chat con enrutamiento propio usando History API.</p>
+                    <h3>✨ Características técnicas</h3>
+                    <ul class="feature-list">
+                        <li>✅ Routing SPA sin frameworks (History API)</li>
+                        <li>✅ Botones back/forward del navegador totalmente funcionales</li>
+                        <li>✅ Tres vistas: Home, Chat, About</li>
+                        <li>✅ Diseño mobile-first + Media Queries (tablet/desktop)</li>
+                        <li>✅ Mensajes usuario/bot diferenciados visualmente</li>
+                        <li>✅ Respuestas automáticas simulando IA</li>
+                        <li>✅ Indicador "escribiendo..." para experiencia realista</li>
+                    </ul>
+                    <p>📌 <strong>Funcionalidad del Chat:</strong> El bot responde automáticamente con respuestas contextuales simples. Puedes preguntar sobre clima, tecnología, o saludar.</p>
+                    <p style="margin-top: 1rem; font-style: italic;">💡 Desarrollado con HTML/CSS/JS puro, History API, Flexbox y Grid.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        ChatBot SPA - Routing con History API | Diseño responsive
+    </footer>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>

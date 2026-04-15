@@ -27,7 +27,9 @@
                     <p>Tu asistente virtual inteligente, disponible 24/7 para resolver dudas, conversar y ayudarte.</p>
                     <button id="go-to-chat-btn" class="cta-button">Iniciar conversación →</button>
                 </div>
-                <p style="font-size: 0.9rem; color: #6b7280;">SPA con History API | Back/Forward funcional</p>
+                <p style="font-size: 0.9rem; color: #6b7280;">
+                    SPA con History API | Back/Forward funcional
+                </p>
             </div>
         </div>
 
@@ -35,7 +37,7 @@
         <div id="chat-view" class="view">
             <div class="chat-container">
                 <div class="messages-area" id="messages-container">
-                    <!-- Los mensajes se inyectan dinámicamente -->
+                    <!-- Mensajes dinámicos -->
                     <div class="message bot-message">
                         <div class="bubble">
                             👋 ¡Hola! Soy tu asistente. ¿En qué puedo ayudarte hoy?
@@ -43,6 +45,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="input-area">
                     <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off">
                     <button id="send-btn">Enviar ➤</button>
@@ -56,26 +59,38 @@
                 <div class="about-card">
                     <h2>📱 Sobre la App</h2>
                     <p><strong>ChatBot SPA</strong> - Una aplicación moderna de chat con enrutamiento propio usando History API.</p>
+
                     <h3>✨ Características técnicas</h3>
                     <ul class="feature-list">
                         <li>✅ Routing SPA sin frameworks (History API)</li>
                         <li>✅ Botones back/forward del navegador totalmente funcionales</li>
                         <li>✅ Tres vistas: Home, Chat, About</li>
-                        <li>✅ Diseño mobile-first + Media Queries (tablet/desktop)</li>
+                        <li>✅ Diseño mobile-first + Media Queries</li>
                         <li>✅ Mensajes usuario/bot diferenciados visualmente</li>
                         <li>✅ Respuestas automáticas simulando IA</li>
-                        <li>✅ Indicador "escribiendo..." para experiencia realista</li>
+                        <li>✅ Indicador "escribiendo..."</li>
                     </ul>
-                    <p>📌 <strong>Funcionalidad del Chat:</strong> El bot responde automáticamente con respuestas contextuales simples. Puedes preguntar sobre clima, tecnología, o saludar.</p>
-                    <p style="margin-top: 1rem; font-style: italic;">💡 Desarrollado con HTML/CSS/JS puro, History API, Flexbox y Grid.</p>
+
+                    <p>
+                        📌 <strong>Funcionalidad del Chat:</strong>
+                        El bot responde automáticamente con respuestas contextuales simples.
+                    </p>
+
+                    <p style="margin-top: 1rem; font-style: italic;">
+                        💡 HTML + CSS + JS puro con arquitectura modular.
+                    </p>
                 </div>
             </div>
         </div>
     </main>
+
     <footer>
         ChatBot SPA - Routing con History API | Diseño responsive
     </footer>
 </div>
-<script type="module" src="app.js"></script>
+
+<!-- ✅ ENTRY POINT CORRECTO (modular architecture) -->
+<script type="module" src="./src/components/main.js"></script>
+
 </body>
 </html>

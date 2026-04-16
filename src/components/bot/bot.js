@@ -1,6 +1,4 @@
-import { sendMessage } from "../services/sendMessages.js";
-
-
+import { sendMessage } from "../services/sendMessages";
 
 export const Bot = {
     async getReply(userMessage) {
@@ -8,7 +6,8 @@ export const Bot = {
             const response = await sendMessage(userMessage);
             return response;
         } catch (error) {
-            return "Hubo un problema conectando con la mente de Tesla ⚡";
+            console.error("BOT ERROR:", error);
+            return "ERROR REAL: " + error.message;
         }
     }
 };

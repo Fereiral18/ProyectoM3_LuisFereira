@@ -14,27 +14,14 @@ function initApp() {
         }
     }, 60000);
 }
-function scrollToBottom() {
-    const container = document.getElementById("messages-container");
-    container.scrollTop = container.scrollHeight;
+function setVh() {
+  document.documentElement.style.setProperty(
+    "--vh",
+    window.innerHeight * 0.01
+  );
 }
 
-let lastHeight = window.innerHeight;
-
-window.addEventListener("resize", () => {
-    const currentHeight = window.innerHeight;
-
-    // si cambió mucho, probablemente apareció/desapareció teclado
-    if (Math.abs(lastHeight - currentHeight) > 100) {
-        scrollToBottom();
-    }
-
-    lastHeight = currentHeight;
-});
-if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", () => {
-        scrollToBottom();
-    });
-}
+setVh();
+window.addEventListener("resize", setVh);
 
 initApp();

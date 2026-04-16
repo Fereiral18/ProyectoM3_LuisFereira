@@ -197,7 +197,8 @@ body {
 
 .messages-area {
   flex: 1;
-  min-height: 0;
+  max-height: 100dvh;
+  min-height: 50dvh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

@@ -21,3 +21,5 @@ app.use(express.json());
 app.use("/api/chat", chatRoute);
 
 app.listen(3000, () => console.log("Server running"));
+
+console.log("API KEY:", process.env.GEMINI_API_KEY);

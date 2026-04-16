@@ -16,3 +16,5 @@ export async function sendMessage(message) {
     const data = await res.json();
     return data.text;
 }
+
+console.log("API KEY:", process.env.GEMINI_API_KEY);

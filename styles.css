@@ -45,7 +45,7 @@ body {
 /* ==================== APP LAYOUT ==================== */
 
  .app {
-  display: flex;
+    display: flex;
   flex-direction: column;
   height: 100dvh;
   overflow: hidden;
@@ -188,19 +188,21 @@ body {
 }
 
 /* ==================== CHAT VIEW ==================== */
-.chat-container {
+
+  .chat-container {
   display: flex;
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
 }
+
+
 .messages-area {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
-  -webkit-overflow-scrolling: touch;
 }
+
 
 /* Burbujas de mensajes */
 .message {
@@ -258,20 +260,19 @@ body {
 
 /* Input area */
 
- .input-area {
+
+  .input-area {
+  flex-shrink: 0;
   background: white;
   border-top: 1px solid #e5e7eb;
-  padding: 0.75rem;
+
   display: flex;
   gap: 0.5rem;
   align-items: center;
 
-  flex-shrink: 0;
-
-  position: sticky;
-  bottom: 0;
-  z-index: 20;
+  padding: 0.75rem;
 }
+
 
 
 .input-area input {

@@ -1,6 +1,12 @@
-export function scrollToBottom() {
-    const container = document.getElementById("messages-container");
-    if (!container) return;
+import { DOM } from "../dom/dom.js";
 
-    container.scrollTop = container.scrollHeight;
+export function isAtBottom() {
+    const el = DOM.messagesContainer;
+
+    return el.scrollHeight - el.scrollTop <= el.clientHeight + 80;
+}
+
+export function scrollToBottom() {
+    const el = DOM.messagesContainer;
+    el.scrollTop = el.scrollHeight;
 }

@@ -36,8 +36,8 @@ body {
    height: calc(var(--vh, 1vh) * 100);
 }
 .messages-area {
-  flex: 1;
-  min-height: 0;
+
+ height: 60dvh;
   overflow-y: auto;
   scroll-behavior: smooth;
 }
@@ -109,7 +109,6 @@ body {
 /* MAIN CONTENT (VISTAS) */
 .view-container {
   flex: 1;
-  overflow-y: auto;
   position: relative;
 }
 
@@ -197,13 +196,6 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
-}
-
-
-.messages-area {
-  flex: 1;
-  overflow-y:scroll;
-  min-height: 50dvh;
 }
 
 
@@ -401,8 +393,7 @@ body {
 }
 .chat-container {
   position: relative;
-  height: 100dvh;
-  overflow: hidden;
+  
 }
 /* estado activo: sube 30% de la pantalla */
 .input-area {
@@ -411,9 +402,10 @@ body {
 
 /* opcional: para que los mensajes no queden tapados */
 .messages-area {
-  padding-bottom: 80px;
+  
   overflow-y: auto;
-  height: 100%;
+  min-height: 0; /* CRÍTICO */
+  padding: 10px;
 }
   .app-header {
     padding: 1rem 2rem;
@@ -462,7 +454,7 @@ body {
   }
 
   .message {
-    max-width: 55%;
+    max-width: 85%;
   }
 
   .nav-btn {
@@ -517,20 +509,33 @@ footer {
 }
 
 @media (max-width: 760px) {
-    /* área de input fija abajo */
-.input-area {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+
+    .message{
+        max-width: 85%;
+    }
+.chat-container {
   display: flex;
-  gap: 10px;
-  padding: 10px;
-  background: white;
-  transition: transform 0.35s ease;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
 }
-/* estado activo: sube 30% de la pantalla */
-.chat-container.input-active .input-area {
-  transform: translateY(-30vh);
+
+/* zona de mensajes ocupa todo el espacio disponible */
+.messages-area {
+  
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* INPUT SIEMPRE ABAJO */
+.input-area {
+  flex-shrink: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
 }
 }

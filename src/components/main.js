@@ -16,25 +16,12 @@ function initApp() {
         }
     }, 60000);
 }
-function setVh() {
-  document.documentElement.style.setProperty(
-    "--vh",
-    window.innerHeight * 0.01
-  );
+const messagesContainer = document.getElementById("messages-container");
+
+export function scrollToBottom() {
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
-
-setVh();
-window.addEventListener("resize", setVh);
-
-const chat = document.getElementById("chat-input");
-const chatContainer = document.querySelector(".chat-container");
-
-// cuando el input recibe foco
-chat.addEventListener("focusin", () => {
-  chatContainer.classList.add("input-active");
-});
-
-chat.addEventListener("focusout", () => {
-  chatContainer.classList.remove("input-active");
-});
+export function isAtBottom() {
+  return messagesContainer.scrollHeight - messagesContainer.scrollTop <= messagesContainer.clientHeight + 50;
+}
 initApp();

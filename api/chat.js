@@ -6,7 +6,11 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { message, system } = req.body;
+        if (!process.env.GEMINI_API_KEY) {
+            throw new Error("Missing GEMINI_API_KEY");
+        }
+
+        const { message, system } = req.body || {};
 
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -14,23 +18,21 @@ export default async function handler(req, res) {
             model: "gemini-1.5-flash"
         });
 
-        // Construimos el prompt combinando system + user
         const prompt = `
 ${system || ""}
-
 Usuario: ${message}
         `;
 
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const text = response.text();
+        const text = result.response.text();
 
         return res.status(200).json({ text });
 
     } catch (error) {
-        console.error("Gemini error:", error);
+        console.error("🔥 Gemini error:", error);
+
         return res.status(500).json({
-            error: "Error generating response"
+            error: error.message || "Error generating response"
         });
     }
 }

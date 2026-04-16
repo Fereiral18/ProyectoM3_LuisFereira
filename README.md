@@ -97,7 +97,8 @@ Crear archivo .env en /backend:
 GEMINI_API_KEY=tu_api_key_aqui
 PORT=3000
 4. Ejecutar servidor backend
-npm run dev
+npm start
+
 5. Ejecutar frontend
 
 Puedes usar Live Server o simplemente abrir:

@@ -132,6 +132,7 @@ Respuesta:
 ### El proyecto está preparado para desplegarse en Vercel:
 
 vercel deploy
+URL: https://proyecto-m3-luis-fereira.vercel.app/?view=home
 
 Incluye:
 
@@ -167,6 +168,8 @@ SPAs sin frameworks
 Arquitectura modular en JavaScript
 Integración con IA generativa
 UX tipo chat moderno
+
+Produccion/URL : https://proyecto-m3-luis-fereira.vercel.app/?view=home
 
 ## ⚡ Inspiración
 

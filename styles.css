@@ -46,13 +46,10 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100);
-  max-width: 1400px;
-  margin: 0 auto;
-  background: white;
-  box-shadow: var(--shadow-sm);
+  height: 100dvh; /* fallback moderno */
+  height: calc(var(--vh, 1vh) * 100); /* fix teclado */
+  overflow: hidden;
 }
-
 /* HEADER */
 .app-header {
   background: var(--header-bg);
@@ -194,17 +191,18 @@ body {
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
   min-height: 0;
 }
 
 .messages-area {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 0.5rem 0.25rem 1rem 0.25rem;
+  padding: 0.5rem 0.25rem 1rem;
 }
 
 /* Burbujas de mensajes */
@@ -262,16 +260,17 @@ body {
 }
 
 /* Input area */
-.input-area {
+
+  .input-area {
   background: white;
   border-top: 1px solid #e5e7eb;
   padding: 0.75rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  flex-wrap: wrap;
-  position: sticky;
+  flex-shrink: 0;
 }
+
 
 .input-area input {
   flex: 1;
@@ -394,10 +393,7 @@ body {
     max-width: 70%;
   }
 
-  .input-area {
-    padding: 1rem 1.5rem;
-  }
-
+ 
   .input-area input {
     font-size: 1rem;
     padding: 0.85rem 1.2rem;

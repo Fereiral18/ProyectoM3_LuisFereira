@@ -1,4 +1,4 @@
-import { sendMessage } from "../services/sendMessages";
+import { sendMessage } from "../services/sendMessages.js";
 
 export const Bot = {
     async getReply(userMessage) {

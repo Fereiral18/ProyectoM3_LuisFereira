@@ -44,11 +44,15 @@ body {
 
 /* ==================== APP LAYOUT ==================== */
 
- .app {
+ #app {
     display: flex;
   flex-direction: column;
   height: 100dvh;
   overflow: hidden;
+}
+
+#app.active{
+      transform: translateY(-30vh);
 }
 /* HEADER */
 .app-header {
@@ -189,18 +193,17 @@ body {
 
 /* ==================== CHAT VIEW ==================== */
 
-  .chat-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 0;
+ .chat-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 
 .messages-area {
   flex: 1;
-  overflow-y: auto;
-  min-height: 0;
+  overflow-y:scroll;
+  min-height: 50dvh;
 }
 
 
@@ -384,10 +387,34 @@ body {
     height: 100svh; /* mejor soporte iOS/Android moderno */
   }
 
-  .input-area {
-    position: sticky;
-    bottom: 0;
-  }
+ /* área de input fija abajo */
+.input-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  transition: transform 0.35s ease;
+}
+.chat-container {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+}
+/* estado activo: sube 30% de la pantalla */
+.input-area {
+ padding-bottom: 20px;
+}
+
+/* opcional: para que los mensajes no queden tapados */
+.messages-area {
+  padding-bottom: 80px;
+  overflow-y: auto;
+  height: 100%;
+}
   .app-header {
     padding: 1rem 2rem;
   }
@@ -487,4 +514,23 @@ footer {
   border-top: 1px solid #e5e7eb;
   background: white;
   color: #6b7280;
+}
+
+@media (max-width: 760px) {
+    /* área de input fija abajo */
+.input-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  transition: transform 0.35s ease;
+}
+/* estado activo: sube 30% de la pantalla */
+.chat-container.input-active .input-area {
+  transform: translateY(-30vh);
+}
 }

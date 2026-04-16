@@ -1,3 +1,5 @@
+const chatInput = document.getElementById("chat-input");
+const inputArea = document.getElementById("input-area");
 import { Render } from "./render/render.js";
 import { Router } from "./router/router.js";
 import { Events } from "./events/events.js";
@@ -24,4 +26,15 @@ function setVh() {
 setVh();
 window.addEventListener("resize", setVh);
 
+const chat = document.getElementById("chat-input");
+const chatContainer = document.querySelector(".chat-container");
+
+// cuando el input recibe foco
+chat.addEventListener("focusin", () => {
+  chatContainer.classList.add("input-active");
+});
+
+chat.addEventListener("focusout", () => {
+  chatContainer.classList.remove("input-active");
+});
 initApp();

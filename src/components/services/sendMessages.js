@@ -17,4 +17,3 @@ export async function sendMessage(message) {
     return data.text;
 }
 
-console.log("API KEY:", process.env.GEMINI_API_KEY);

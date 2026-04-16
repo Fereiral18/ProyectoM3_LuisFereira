@@ -1,4 +1,5 @@
-import { sendMessage } from "../../../api/functions.js";
+import { sendMessage } from "../../../backend/api/chat.js";
+
 
 export const Bot = {
     async getReply(userMessage) {

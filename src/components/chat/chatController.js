@@ -1,4 +1,4 @@
-import { sendMessage } from "../../../api/functions.js";
+import { sendMessage } from "../../../backend/api/chat.js";
 import { Render } from "../render/render.js";
 import { AppState } from "../state/appState.js";
 

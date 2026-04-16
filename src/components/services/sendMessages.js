@@ -1,6 +1,3 @@
-import { TESLA_PROMPT } from "../chat/teslaPrompt.js";
-
-
 export async function sendMessage(message) {
     const res = await fetch("/api/chat", {
         method: "POST",
@@ -14,6 +11,12 @@ export async function sendMessage(message) {
     });
 
     const data = await res.json();
-    return data.text;
-}
 
+    console.log("BACKEND RESPONSE:", data);
+
+    if (!res.ok) {
+        throw new Error(data.error || "Error en el servidor");
+    }
+
+    return data.text || "Sin respuesta del oráculo de Tesla";
+}

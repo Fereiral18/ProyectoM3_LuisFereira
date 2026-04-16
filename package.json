@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "vercel": "^51.4.0"
   }
 }

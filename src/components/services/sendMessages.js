@@ -1,4 +1,5 @@
-import { TESLA_PROMPT } from "../components/chat/teslaPrompt.js";
+import { TESLA_PROMPT } from "../chat/teslaPrompt.js";
+
 
 export async function sendMessage(message) {
     const res = await fetch("/api/chat", {

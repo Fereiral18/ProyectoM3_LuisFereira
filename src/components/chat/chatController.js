@@ -1,5 +1,5 @@
-import { sendMessage } from "../../../backend/api/chat.js";
 import { Render } from "../render/render.js";
+import { sendMessage } from "../services/sendMessages.js";
 import { AppState } from "../state/appState.js";
 
 export async function handleUserMessage(text) {

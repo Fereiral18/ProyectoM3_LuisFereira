@@ -1,4 +1,5 @@
-import { sendMessage } from "../../../backend/api/chat.js";
+import { sendMessage } from "../services/sendMessages.js";
+
 
 
 export const Bot = {

@@ -52,8 +52,8 @@ export const Router = {
         Render.messages();
     },
 
-    handlePopState(event) {
-        const view = event.state?.view || 'home';
-        this.setView(view);
-    }
+   handlePopState(event) {
+    const view = event.state?.view || 'home';
+    Router.setView(view);
+}
 };

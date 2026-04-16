@@ -32,7 +32,7 @@ body {
     sans-serif;
   background: var(--bg-page);
   color: var(--bot-text);
-  overflow: hidden;
+  overflow: auto;
    height: calc(var(--vh, 1vh) * 100);
 }
 .messages-area {
@@ -195,6 +195,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
 }
 
 .messages-area {
@@ -403,6 +404,7 @@ body {
   }
 
   .view {
+    min-height: 0;
     padding: 1.5rem;
   }
 
@@ -433,7 +435,10 @@ body {
   }
 
   .input-area {
-    padding: 1rem 2rem;
+     position: sticky;
+  bottom: 0;
+  z-index: 10;
+    
   }
 
   .bubble {

@@ -43,11 +43,11 @@ body {
 }
 
 /* ==================== APP LAYOUT ==================== */
-.app {
+
+ .app {
   display: flex;
   flex-direction: column;
-  height: 100dvh; /* fallback moderno */
-  height: calc(var(--vh, 1vh) * 100); /* fix teclado */
+  height: 100dvh;
   overflow: hidden;
 }
 /* HEADER */
@@ -193,17 +193,13 @@ body {
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  overflow: hidden;
 }
-
 .messages-area {
   flex: 1;
-  max-height: 100dvh;
-  min-height: 50dvh;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 0.5rem 0.25rem 1rem;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Burbujas de mensajes */
@@ -262,14 +258,19 @@ body {
 
 /* Input area */
 
-  .input-area {
+ .input-area {
   background: white;
   border-top: 1px solid #e5e7eb;
   padding: 0.75rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+
   flex-shrink: 0;
+
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
 }
 
 
@@ -377,6 +378,15 @@ body {
 /* ==================== MEDIA QUERIES ==================== */
 /* Tablet (min-width: 768px) */
 @media (min-width: 768px) {
+    .app {
+    height: 100dvh;
+    height: 100svh; /* mejor soporte iOS/Android moderno */
+  }
+
+  .input-area {
+    position: sticky;
+    bottom: 0;
+  }
   .app-header {
     padding: 1rem 2rem;
   }

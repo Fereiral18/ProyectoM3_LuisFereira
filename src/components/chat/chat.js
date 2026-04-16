@@ -2,6 +2,7 @@ import { AppState } from "../state/appState.js";
 import { DOM } from "../dom/dom.js";
 import { Render } from "../render/render.js";
 import { Bot } from "../bot/bot.js";
+import { scrollToBottom } from "../utils/scroll.js";
 
 export const Chat = {
    addUserMessageAndRespond(text) {
@@ -32,6 +33,7 @@ export const Chat = {
 
         Render.typingIndicator(false);
         Render.messages();
+        scrollToBottom();
         AppState.isBotTyping = false;
     }, 800 + Math.random() * 400);
 },

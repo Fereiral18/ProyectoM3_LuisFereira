@@ -14,5 +14,27 @@ function initApp() {
         }
     }, 60000);
 }
+function scrollToBottom() {
+    const container = document.getElementById("messages-container");
+    container.scrollTop = container.scrollHeight;
+}
+
+let lastHeight = window.innerHeight;
+
+window.addEventListener("resize", () => {
+    const currentHeight = window.innerHeight;
+
+    // si cambió mucho, probablemente apareció/desapareció teclado
+    if (Math.abs(lastHeight - currentHeight) > 100) {
+        scrollToBottom();
+    }
+
+    lastHeight = currentHeight;
+});
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", () => {
+        scrollToBottom();
+    });
+}
 
 initApp();
